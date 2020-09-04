@@ -1,0 +1,19 @@
+--- mbed-os/tools/toolchains/gcc.py	2020-08-16 17:46:57.789776962 +0300
++++ ./gcc.py	2020-08-16 17:57:38.016794967 +0300
+@@ -123,13 +123,13 @@
+         # FPU handling, M7 possibly to have double FPU
+         if core == "Cortex-M4F":
+             self.cpu.append("-mfpu=fpv4-sp-d16")
+-            self.cpu.append("-mfloat-abi=softfp")
++            self.cpu.append("-mfloat-abi=hard")
+         elif core == "Cortex-M7F" or core.startswith("Cortex-M33F"):
+             self.cpu.append("-mfpu=fpv5-sp-d16")
+-            self.cpu.append("-mfloat-abi=softfp")
++            self.cpu.append("-mfloat-abi=hard")
+         elif core == "Cortex-M7FD":
+             self.cpu.append("-mfpu=fpv5-d16")
+-            self.cpu.append("-mfloat-abi=softfp")
++            self.cpu.append("-mfloat-abi=hard")
+ 
+         if target.core == "Cortex-A9":
+             self.cpu.append("-mthumb-interwork")
